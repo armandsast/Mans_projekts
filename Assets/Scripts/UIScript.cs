@@ -1,34 +1,66 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour
 {
-    public GameObject cepures;
-    public GameObject krekls;
-     public GameObject bikses;
-      public GameObject apavi;
+    public GameObject[] cepures;
+    public GameObject[] krekli;
+     public GameObject[] bikses;
+      public GameObject[] apavi;
     public GameObject imageField;
     public Sprite[] sprites;
     public GameObject scaleYslider;
     public GameObject scaleXslider;
 
 
-    public void ToggleBean (bool val) {
-        cepures.SetActive(val);
 
+public void CepuresSetActive(bool state)
+    {
+        foreach (GameObject item in cepures)
+        {
+            if (item != null)
+            {
+                item.SetActive(state);
+            }
+        }
     }
 
-    public void ToggleTeddy (bool val) {
-        krekls.SetActive(val);
+
+
+public void KrekliSetActive(bool state)
+    {
+        foreach (GameObject item in krekli)
+        {
+            if (item != null)
+            {
+                item.SetActive(state);
+            }
+        }
     }
 
-    public void ToggleGranny (bool val) {
-        bikses.SetActive(val);
+public void BiksesSetActive(bool state)
+    {
+        foreach (GameObject item in bikses)
+        {
+            if (item != null)
+            {
+                item.SetActive(state);
+            }
+        }
     }
 
-    public void ToggleCar (bool val) {
-        apavi.SetActive(val);
+public void ApaviSetActive(bool state)
+    {
+        foreach (GameObject item in apavi)
+        {
+            if (item != null)
+            {
+                item.SetActive(state);
+            }
+        }
     }
+
 
     public void ChangeSprite(int val) {
         imageField.GetComponent<Image>().sprite = sprites[val];
