@@ -30,21 +30,16 @@ public class UIScript : MonoBehaviour
         apavi.SetActive(val);
     }
 
-    public void Flip(int val) {
-        imageField.transform.localScale = new Vector2(val, 1);
-    }
-
     public void ChangeSprite(int val) {
         imageField.GetComponent<Image>().sprite = sprites[val];
     }
 
-    public void Rotate() {
-        float currentValue = scaleYslider.GetComponent<Slider>().value;
-        imageField.transform.rotation = Quaternion.Euler(0, 0, currentValue * 360);
-    }
-
-    public void Scale() {
+    public void ScaleX() {
         float currentValue = scaleXslider.GetComponent<Slider>().value;
-        imageField.transform.localScale = new Vector2(1f * currentValue, 1f * currentValue);
+        imageField.transform.localScale = new Vector2(1f * currentValue, 1f );
+    }
+        public void ScaleY() {
+        float currentValue = scaleYslider.GetComponent<Slider>().value;
+        imageField.transform.localScale = new Vector2(1f, 1f * currentValue);
     }
 }
